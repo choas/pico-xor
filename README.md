@@ -1,10 +1,10 @@
 # XOR Machine Learning Raspberry Pi Pico
 
-Der Sourcecode für das Trainingund für die Anwendung zum heise Artikel _TODO_.
+Der Sourcecode für das Training und für die Anwendung zum heise Artikel _TODO_.
 
 ## PicoML
 
-Das `PicoML` Verzeichnis enthält das Python Projekt mit dem XOR Model. Dies ist im Juyter Notebook beschrieben. Das Notebook erstellt die Datei `model.cpp` für die XOR Anwendung.
+Das [PicoML](./PicoML) Verzeichnis enthält das Python Projekt mit dem XOR Model. Dies ist im Juyter Notebook beschrieben. Das Notebook erstellt die Datei `model.cpp` für die XOR Anwendung.
 
 ## pico-tfmicro
 
