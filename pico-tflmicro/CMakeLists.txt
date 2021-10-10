@@ -116,7 +116,6 @@ target_sources(pico-tflmicro
   ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/rp2/micro_time.cpp
   ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/simple_memory_allocator.cpp
   ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/test_helpers.cpp
-  ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/testing/test_conv_model.cpp
   ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/schema/schema_utils.cpp
   ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/LICENSE
   ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/core/public/version.h
@@ -332,53 +331,6 @@ target_sources(pico-tflmicro
   ${CMAKE_CURRENT_LIST_DIR}/src/third_party/kissfft/tools/kiss_fftr.h
   ${CMAKE_CURRENT_LIST_DIR}/src/third_party/ruy/LICENSE
   ${CMAKE_CURRENT_LIST_DIR}/src/third_party/ruy/ruy/profiler/instrumentation.h
-)
-
-add_library(pico-tflmicro_test "")
-
-target_include_directories(pico-tflmicro_test
-  PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/src/
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/cmsis/CMSIS/DSP/Include
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/ruy
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/gemmlowp
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/kissfft
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/flatbuffers
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/cmsis/CMSIS/Core/Include
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/cmsis
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/flatbuffers/include
-  ${CMAKE_CURRENT_LIST_DIR}/src/third_party/cmsis/CMSIS/NN/Include
-)
-
-target_compile_definitions(
-  pico-tflmicro_test
-  PUBLIC
-  COMPILE_DEFINITIONS TF_LITE_DISABLE_X86_NEON=1
-  COMPILE_DEFINITIONS TF_LITE_STATIC_MEMORY=1
-  COMPILE_DEFINITIONS CMSIS_NN=1
-)
-
-set_target_properties(
-  pico-tflmicro_test
-  PROPERTIES
-  COMPILE_FLAGS -fno-rtti
-  COMPILE_FLAGS -fno-exceptions
-  COMPILE_FLAGS -fno-threadsafe-statics
-  COMPILE_FLAGS -nostdlib
-)
-
-target_link_libraries(
-  pico-tflmicro_test
-  pico_stdlib
-)
-
-target_sources(pico-tflmicro_test
-  PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/benchmarks/keyword_scrambled_model_data.cpp
-  ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/testing/test_conv_model.cpp
-  ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/testing/util_test.cpp
-  ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/testing/micro_test.h
-  ${CMAKE_CURRENT_LIST_DIR}/src/tensorflow/lite/micro/testing/test_conv_model.h
 )
 
 add_subdirectory("examples/xor")
