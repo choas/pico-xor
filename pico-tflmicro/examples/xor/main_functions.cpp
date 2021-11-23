@@ -95,9 +95,11 @@ void loop()
   input->data.f[0] = button1;
   input->data.f[1] = button2;
 
+  uint32_t t1 = time_us_32();
   TfLiteStatus invoke_status = interpreter->Invoke();
+  uint32_t t2 = time_us_32();
 
-  printf("%f\n", output->data.f[0]);
+  printf("%.7f %zu\n", output->data.f[0], (t2-t1));
 
   if (output->data.f[0] > 0.5)
   {
