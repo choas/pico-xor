@@ -26,6 +26,8 @@ target_sources(xor
   ${CMAKE_CURRENT_LIST_DIR}/main.cpp
   ${CMAKE_CURRENT_LIST_DIR}/main_functions.cpp
   ${CMAKE_CURRENT_LIST_DIR}/model.cpp
+  # ${CMAKE_CURRENT_LIST_DIR}/model_16_128.tflite.cpp
+  # ${CMAKE_CURRENT_LIST_DIR}/model_16_128_optimized.tflite.cpp
   ${CMAKE_CURRENT_LIST_DIR}/main_functions.h
   ${CMAKE_CURRENT_LIST_DIR}/model.h
 )
