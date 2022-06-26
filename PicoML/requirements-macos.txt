@@ -1,0 +1,5 @@
+notebook==6.4.12
+tensorflow-macos==2.9.2
+tensorflow-metal==0.5.0
+hexdump==3.3
+
