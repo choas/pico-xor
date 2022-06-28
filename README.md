@@ -1,6 +1,6 @@
 # XOR Machine Learning Raspberry Pi Pico
 
-Der Sourcecode für das Training und für die Anwendung zum heise Artikel [Schlauer Zwerg: ML mit dem Raspberry Pi Pico, Teil 2: Modelltraining](https://www.heise.de/hintergrund/Schlauer-Zwerg-ML-mit-dem-Raspberry-Pi-Pico-Teil-2-Modelltraining-6214354.html).
+Der Sourcecode für das Training und für die Anwendung zu den heise Artikeln [Schlauer Zwerg: ML mit dem Raspberry Pi Pico, Teil 2: Modelltraining](https://www.heise.de/hintergrund/Schlauer-Zwerg-ML-mit-dem-Raspberry-Pi-Pico-Teil-2-Modelltraining-6214354.html) und [Teil 3: Tuning](https://www.heise.de/hintergrund/Schlauer-Zwerg-Maschinelles-Lernen-mit-dem-Raspberry-Pi-Pico-Teil-3-Tuning-6370462.html).
 
 ## PicoML
 
